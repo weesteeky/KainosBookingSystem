@@ -26,11 +26,10 @@ app.post('/addcourse', function(request, response){
     addcourse(request.body)
 });
 
-app.get('/test', cors(), function(request, response){
+app.get('/courses', cors(), function(request, response){
     db.query("SELECT * FROM Course").then(rows => {
-        reponse.send(rows)
+        response.send(rows)
     })
-    //response.send({ title: 'WHOAH with CORS it works'});
 });
 
 app.listen(PORT, () => {

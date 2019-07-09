@@ -1,15 +1,17 @@
 <!DOCTYPE html>
 <html>
 <head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <script src="./getData.js"></script>
 </head>
 <body>
     <ul id="list">
     </ul>
     <script>
-    getData("test").then(data =>{
+    getData("courses").then(data =>{
+        data = $.parseJSON(data)
         for(var i = 0; i < data.length; i++){
-            document.getElementById("list").innerHTML += "<li>"+data[i].title+"</li>"
+            document.getElementById('list').innerHTML += "<li>"+data[i].Title+"</li>"
         }
     })
     </script>
