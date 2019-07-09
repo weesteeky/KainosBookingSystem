@@ -26,6 +26,7 @@ class Database {
     }
 }
 
+
 var db = new Database();
 
 /*db.query(' INSERT INTO Course(Title,Date,Location,Description,Owner) VALUES("test","2019-01-01","abc","abc","abc")').then(rows => {

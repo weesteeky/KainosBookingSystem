@@ -1,14 +1,34 @@
+
 <html>
 <form action="localhost:8000/addCourse" method = "POST">
+<html  lang="en"></form>
+<!DOCTYPE html>
+        <head>
+          <title>Form</title>
+          <meta charset="utf-8">
+          <meta name="viewport" content="width=device-width, initial-scale=1">
+          <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+          <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+          <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+
+<form>
     <fieldset>
         <legend>Add Course</legend>
-        Title: <input type="text" name="Title" size="50" maxlength="101" required><br>
+        Title: <input type="text" name="Title" size="50" maxlength="100" required><br>
         Date: <input type="date" name="Date" size="11" maxlength="11" required><br>
-
-        Description: <input type name="Description" size="50" maxlength="300" required><br>
-        NameOfTrainer: <input type="text" name="NameOfTrainer" size="50" maxlength="100" required><br>
-        Information: <textarea type="text" name="Information" row="5" cols="50" maxlength="200" required><br>
-        Capacity: <input type="number" name="Capacity" size="999" value="1" required><br>
+        Location: <select name="Location" value="Belfast">
+            <option value="Belfast">Belfast</option>
+            <option value="Derry">Derry</option>
+            <option value="Dublin">Dublin</option>
+            <option value="London">London</option>
+            <option value="Gdansk">Gdansk</option>
+            <option value="Amsterdam">Amsterdam</option>
+            <option value="Boston">Boston</option>
+            <option value="Amsterdam">Amsterdam</option>
+        </select><br>
+        Description: <textarea type="text" name="Description" row="5" cols="50" maxlength="300" required></textarea><br>
+        Information: <textarea type="text" name="Information" row="5" cols="50" maxlength="200" required></textarea><br>
+        Capacity: <input type="number" name="Capacity" min="1" value="1" onkeypress="return event.charCode>=48" required><br>
 
         <input type="submit" >
     </fieldset>
