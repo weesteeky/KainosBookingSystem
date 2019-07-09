@@ -1,42 +1,40 @@
-<html  lang="en">
+<html>
+
+<form action="localhost:8000/addCourse" method="POST">
+  <html lang="en">
+</form>
 <!DOCTYPE html>
-        <head>
-          <title>Form</title>
-          <meta charset="utf-8">
-          <meta name="viewport" content="width=device-width, initial-scale=1">
-          <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
-          <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-          <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+
+<head>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <img src="images/maplogo.png" alt="Map logo">
+</head>
+
+<title>Form</title>
+
+
 <form>
-    <fieldset>
-        <legend>Add Course</legend>
-        Title: <input type="" name="" size="" length="" value=""><br>
-        Date: <input type="" name="" size="" length="" value=""><br>
+  <fieldset>
+    <legend>Add Course</legend>
+    Title: <input type="text" name="Title" size="50" maxlength="100" required><br>
+    Date: <input type="date" name="Date" size="11" maxlength="11" required><br>
+    Location: <select name="Location" value="Belfast">
+      <option value="Belfast">Belfast</option>
+      <option value="Derry">Derry</option>
+      <option value="Dublin">Dublin</option>
+      <option value="London">London</option>
+      <option value="Gdansk">Gdansk</option>
+      <option value="Amsterdam">Amsterdam</option>
+      <option value="Boston">Boston</option>
+      <option value="Amsterdam">Amsterdam</option>
+    </select><br>
+    Description: <textarea type="text" name="Description" row="5" cols="50" maxlength="300" required></textarea><br>
+    Information: <textarea type="text" name="Information" row="5" cols="50" maxlength="200" required></textarea><br>
+    Capacity: <input type="number" name="Capacity" min="1" value="1" onkeypress="return event.charCode>=48"
+      required><br>
 
-        <div class "dropdown">
-            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton"
-                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                Location
-            </button>
-            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                <a class="dropdown-item" href="#">Belfast</a>
-                <a class="dropdown-item" href="#">Derry</a>
-                <a class="dropdown-item" href="#">Dublin</a>
-                <a class="dropdown-item" href="#">London</a>
-                <a class="dropdown-item" href="#">Gdansk</a>
-                <a class="dropdown-item" href="#">Amsterdam</a>
-                <a class="dropdown-item" href="#">Boston</a>
-                <a class="dropdown-item" href="#">Frankfurt</a>
-            </div>
-        </div>
-
-        Description: <input type="" name="" size="" length="" value=""><br>
-
-
-        NameOfTrainer: <input type="" name="" size="" length="" value=""><br>
-        Information: <input type="" name="" size="" length="" value=""><br>
-        <input type="submit">
-    </fieldset>
+    <input type="submit">
+  </fieldset>
 </form>
 
 </html>
