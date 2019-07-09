@@ -1,15 +1,42 @@
-<html>
-    <form>
-        <fieldset>
-            <legend>Add Course</legend>
-                     Title: <input type="" name="" size="" length="" value=""><br>
-                     Date: <input type="" name="" size="" length="" value=""><br>
-                     Location: <input type="" name="" size="" length="" value=""><br>
-                     Description: <input type="" name="" size="" length="" value=""><br>
-                     NameOfTrainer: <input type="" name="" size="" length="" value=""><br>
-                     Information: <input type="" name="" size="" length="" value=""><br>
-                  
-                      <input type="submit">
-        </fieldset>
-    </form>
+<html  lang="en">
+<!DOCTYPE html>
+        <head>
+          <title>Form</title>
+          <meta charset="utf-8">
+          <meta name="viewport" content="width=device-width, initial-scale=1">
+          <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+          <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+          <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+<form>
+    <fieldset>
+        <legend>Add Course</legend>
+        Title: <input type="" name="" size="" length="" value=""><br>
+        Date: <input type="" name="" size="" length="" value=""><br>
+
+        <div class "dropdown">
+            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton"
+                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Location
+            </button>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                <a class="dropdown-item" href="#">Belfast</a>
+                <a class="dropdown-item" href="#">Derry</a>
+                <a class="dropdown-item" href="#">Dublin</a>
+                <a class="dropdown-item" href="#">London</a>
+                <a class="dropdown-item" href="#">Gdansk</a>
+                <a class="dropdown-item" href="#">Amsterdam</a>
+                <a class="dropdown-item" href="#">Boston</a>
+                <a class="dropdown-item" href="#">Frankfurt</a>
+            </div>
+        </div>
+
+        Description: <input type="" name="" size="" length="" value=""><br>
+
+
+        NameOfTrainer: <input type="" name="" size="" length="" value=""><br>
+        Information: <input type="" name="" size="" length="" value=""><br>
+        <input type="submit">
+    </fieldset>
+</form>
+
 </html>
