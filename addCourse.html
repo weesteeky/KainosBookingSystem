@@ -1,15 +1,19 @@
-
 <html>
 <form>
 <html lang="en"></form>
+
+
+<form action="localhost:8000/addCourse" method="POST">
+  <html lang="en">
+</form>
 <!DOCTYPE html>
-        <head>
-          <title>Form</title>
-          <meta charset="utf-8">
-          <meta name="viewport" content="width=device-width, initial-scale=1">
-          <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
-          <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-          <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+
+<head>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <img src="images/maplogo.png" alt="Map logo">
+</head>
+
+<title>Form</title>
 
 <form action="http://localhost:8000/addcourse" method = "POST">
 
@@ -30,9 +34,8 @@
         Description: <textarea type="text" name="Description" row="5" cols="50" maxlength="300" required></textarea><br>
         Information: <textarea type="text" name="Information" row="5" cols="50" maxlength="200" required></textarea><br>
         Capacity: <input type="number" name="Capacity" min="1" value="1" onkeypress="return event.charCode>=48" required><br>
-
-        <input type="submit" >
-    </fieldset>
+    <input type="submit">
+  </fieldset>
 </form>
 
 </html>
