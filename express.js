@@ -7,7 +7,10 @@ const PORT = 8000
 var db = new Database();
 
 function addcourse(body){
-    //code for processing here
+    var sql = "INSERT INTO ..."
+    db.query(sql).then(rows => {
+        console.log(rows)
+    })
 }
 
 // Parse URL-encoded bodies (as sent by HTML forms)
