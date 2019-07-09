@@ -4,14 +4,24 @@ const express = require('express');
 
 const app = express();
 const PORT = 8000
-
 var db = new Database();
 
-function addcourse(body){
-    var sql = "INSERT INTO ..."
-    db.query(sql).then(rows => {
-        console.log(rows)
-    })
+function addcourse(body) {  
+    data =[];
+
+    var tableName = 'Course';
+    var queryName = 'INSERT INTO ' + tableName + '(Title, Date, Location, Description, Owner, TargetAudience) \nVALUES(' + '"';
+
+    queryName = queryName + + '"'+ data[0]+'"' + ', ';
+    queryName = queryName +'"'+ data[1]+'"' + ', ';
+    queryName = queryName +'"'+ data[2] +'"'+ ', ';
+    queryName = queryName +'"'+ data[3]+'"' + ', ';
+    queryName = queryName +'"'+ data[4] +'"'+ ', ';
+    queryName = queryName +'"'+ data[5]+'"';
+    //queryName = queryName + dummyData[6] + ');';
+    queryName = queryName + ');';
+    console.log(queryName);
+    db.query(queryName,'');
 }
 
 // Parse URL-encoded bodies (as sent by HTML forms)
