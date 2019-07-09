@@ -35,6 +35,7 @@
                     var courseDate =  date.getDay()+"/"+date.getMonth()+"/"+date.getFullYear();
                     document.getElementById("courses").innerHTML += '<div class="card-deck mb-3 text-center"><div class="card mb-4 box-shadow"><div class="card-header"><h4 class="my-0 font-weight-normal">' +
                                                                         data[i].Title+'</h4></div><div class="card-body"><p>'+data[i].Description+'</p><p>'+courseDate+'</p><p>'+data[i].Location+'</p>'+
+                                                                        '<a href="http://localhost:8000/?id='+data[i].CourseID+'"><button>Sign up</button></a>'+
                                                                         '</div></div></div></div>'                                                
                 }
             })
