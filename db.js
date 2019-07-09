@@ -1,7 +1,5 @@
 var mysql = require('mysql');
 
-
-
 class Database {
     constructor( config ) {
         this.con = mysql.createConnection({
@@ -40,3 +38,5 @@ db.query( 'SELECT * FROM Course' ).then( rows => {
         console.log(rows[i].Title)
     }
 } );
+
+module.exports = Database;
