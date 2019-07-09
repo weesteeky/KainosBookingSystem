@@ -1,14 +1,11 @@
 const Database = require('./db.js')
-	const express = require('express');
+const express = require('express');
 	
-	const app = express();
-	const PORT = 8000
+const app = express();
+const PORT = 8000
 	
-	var db = new Database();
-    function addcourse(body) {  
-
-        data =[];
-
+var db = new Database();
+function addCourse(data){
         var tableName = 'Course';
         var queryName = 'INSERT INTO ' + tableName + '(Title, Date, Location, Description, Owner, TargetAudience) \nVALUES(' + '"';
 
@@ -18,11 +15,11 @@ const Database = require('./db.js')
         queryName = queryName +'"'+ data[3]+'"' + ', ';
         queryName = queryName +'"'+ data[4] +'"'+ ', ';
         queryName = queryName +'"'+ data[5]+'"';
-        //queryName = queryName + dummyData[6] + ');';
-        queryName = queryName + ');';
+        queryName = queryName + dummyData[6] + ');';
+
         console.log(queryName);
         db.query(queryName,'');
-    }
+}
 
 	// Parse URL-encoded bodies (as sent by HTML forms)
 	app.use(express.urlencoded());
