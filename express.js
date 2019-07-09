@@ -4,6 +4,12 @@ const express = require('express');
 const app = express();
 const PORT = 8000
 
+var db = new Database();
+
+function addcourse(body){
+    //code for processing here
+}
+
 // Parse URL-encoded bodies (as sent by HTML forms)
 app.use(express.urlencoded());
 
@@ -11,10 +17,11 @@ app.use(express.urlencoded());
 app.use(express.json());
 
 // Access the parse results as request.body
-app.post('/', function(request, response){
+app.post('/addcourse', function(request, response){
     console.log(request.body);
+    addcourse(request.body)
 });
 
 app.listen(PORT, () => {
     console.log('Server is running on PORT:',PORT);
-  });
+});
