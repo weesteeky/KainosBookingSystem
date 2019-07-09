@@ -17,4 +17,4 @@ Create table Course (
 insert into Course(Title, Date, Location, Description, Owner) 
 Values ('Java Fundamentals', '01-02-19', 'Belfast', 'Learning the Java basics', 'Deborah');
 
-grant all on BookingSystem.* to empuser2;
+grant all on BookingSystem.* to empuser2@localhost;
