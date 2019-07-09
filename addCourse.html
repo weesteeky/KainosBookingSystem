@@ -1,18 +1,5 @@
 <html>
-    <form>
-        <fieldset>
-            <legend>Add Course</legend>
-                     Title: <input type="" name="" size="" length="" value=""><br>
-                     Date: <input type="" name="" size="" length="" value=""><br>
-                     Location: <input type="" name="" size="" length="" value=""><br>
-                     Description: <input type="" name="" size="" length="" value=""><br>
-                     NameOfTrainer: <input type="" name="" size="" length="" value=""><br>
-                     Information: <input type="" name="" size="" length="" value=""><br>
-            
-                      <input type="submit">
-        </fieldset>
-    </form>
-<form>
+<form action="localhost:8000/addCourse" method = "POST">
     <fieldset>
         <legend>Add Course</legend>
         Title: <input type="text" name="Title" size="50" maxlength="101" required><br>
@@ -23,7 +10,7 @@
         Information: <textarea type="text" name="Information" row="5" cols="50" maxlength="200" required><br>
         Capacity: <input type="number" name="Capacity" size="999" value="1" required><br>
 
-        <input type="submit">
+        <input type="submit" >
     </fieldset>
 </form>
 
