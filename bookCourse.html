@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <title>Kainos MAP</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+            integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script src="getData.js"></script>
+    </head>
+
+    <body>
+        <div
+            class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom box-shadow">
+            <img src="maplogo.png" style="width:10%" class="my-0 mr-md-auto font-weight-normal">
+            <nav class="my-2 my-md-0 mr-md-3">
+                <a class="p-2 text-dark" href="http://localhost:8000/">Courses</a>
+                <a class="p-2 text-dark" href="http://localhost:8000/addcoursepage">Add a course</a>
+            </nav>
+            <a class="btn btn-outline-primary" href="#">Login</a>
+        </div>
+
+        <div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
+            <centre>
+                <h1 class="display-4">Add a course</h1>
+        </div>
+
+        <div id="courses" style="margin-left: 25%; width:80%; ">
+            <form action="http://localhost:8000/bookcourse" method="POST">
+
+                <fieldset>
+                    <legend>Book Course</legend>
+
+                    <div class="form-group">
+                        <div class="col-7">
+                            <label for="nameID">Name:</label>
+                            <input type="name" name="NameOfEmployee" size="50" maxlength="50" required
+                                class="form-control" id="NameOfEmployee" placeholder="Name" required>
+                        </div>
+                    </div>
+                    <div class="col-7">
+                        <label for="emailID">Email:</label>
+                        <input type="name" name="EmailOfEmployee" size="50" maxlength="50" required class="form-control"
+                            id="EmailOfEmployee" placeholder="Email Address" pattern="[a-zA-Z0-9]+@kainos.com^"
+                            required>
+                    </div>
+                    <div class="col-7">
+                        <input type="name" name="CourseID" id="CourseID">
+                    </div>
+                    <script>
+                        var id = window.location.search.split("=")[1];
+                        document.getElementById("CourseID").value = id;
+                    </script>
+                    <div class="col-7">
+                        <input type="submit" class="btn btn-info btn-lg btn-block">
+                    </div>
+                </fieldset>
+            </form>
+        </div>
+        </centre>
+    </body>
+
+</html>
