@@ -1,4 +1,5 @@
 const Database = require('./db.js')
+const cors = require('cors')
 const express = require('express');
 
 const app = express();
@@ -23,6 +24,13 @@ app.use(express.json());
 app.post('/addcourse', function(request, response){
     console.log(request.body);
     addcourse(request.body)
+});
+
+app.get('/test', cors(), function(request, response){
+    db.query("SELECT * FROM Course").then(rows => {
+        reponse.send(rows)
+    })
+    //response.send({ title: 'WHOAH with CORS it works'});
 });
 
 app.listen(PORT, () => {
