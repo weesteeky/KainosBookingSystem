@@ -26,15 +26,4 @@ class Database {
     }
 }
 
-/*var db = new Database();
-
-db.query(' INSERT INTO Course(Title,Date,Location,Description,Owner) VALUES("test","2019-01-01","abc","abc","abc")').then(rows => {
-    console.log(rows)
-db.query( 'SELECT * FROM Course' ).then( rows => {
-    console.log(rows)
-    for(var i = 0; i < rows.length; i++){
-        console.log(rows[i].Title)
-    }
-} );*/
-
 module.exports = Database;
