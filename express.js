@@ -7,13 +7,6 @@ const PORT = 8000
 
 var db = new Database();
 
-function addcourse(body){
-    var sql = "INSERT INTO ..."
-    db.query(sql).then(rows => {
-        console.log(rows)
-    })
-}
-
 // Parse URL-encoded bodies (as sent by HTML forms)
 app.use(express.urlencoded());
 
