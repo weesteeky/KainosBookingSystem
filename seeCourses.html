@@ -1,13 +1,16 @@
 <!doctype html>
 <html lang="en">
+
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>Kainos MAP</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="getData.js"></script>
-</head>
+  </head>
+
   <body>
     <div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom box-shadow">
       <img src="maplogo.png" style="width:10%" class="my-0 mr-md-auto font-weight-normal">
@@ -25,22 +28,24 @@
     <div class="container" id="courses">
       <div class="card-deck mb-3 text-center">
         <div class="card mb-4 box-shadow">
-      <script>
-            getData("courses").then(data =>{
-                data = $.parseJSON(data)
-                
-                const width = 3;
-                for(var i = 0; i < data.length; i++){
-                    var date = new Date(data[i].Date); 
-                    var courseDate =  date.getDay()+"/"+date.getMonth()+"/"+date.getFullYear();
-                    document.getElementById("courses").innerHTML += '<div class="card-deck mb-3 text-center"><div class="card mb-4 box-shadow"><div class="card-header"><h4 class="my-0 font-weight-normal">' +
-                                                                        data[i].Title+'</h4></div><div class="card-body"><p>'+data[i].Description+'</p><p>'+courseDate+'</p><p>'+data[i].Location+'</p>'+
-                                                                        '</div></div></div></div>'                                                
-                }
+          <script>
+            getData("courses").then(data => {
+              data = $.parseJSON(data)
+
+              const width = 3;
+              for (var i = 0; i < data.length; i++) {
+                var date = new Date(data[i].Date);
+                var courseDate = date.getDay() + "/" + date.getMonth() + "/" + date.getFullYear();
+                document.getElementById("courses").innerHTML += '<div class="card-deck mb-3 text-center"><div class="card mb-4 box-shadow"><div class="card-header"><h4 class="my-0 font-weight-normal">' +
+                  data[i].Title + '</h4></div><div class="card-body"><p>' + data[i].Description + '</p><p>' + courseDate + '</p><p>' + data[i].Location + '</p>' +
+                  '<a href="http://localhost:8000/bookcoursepage?id=' + data[i].CourseID + '"><button>Sign up</button></a>' +
+                  '</div></div></div></div>'
+              }
             })
-        
-          document.getElementById("courses").innerHTML += '</div>'
-      </script>
-    </div>
+
+            document.getElementById("courses").innerHTML += '</div>'
+          </script>
+        </div>
   </body>
+
 </html>
