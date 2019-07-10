@@ -1,4 +1,5 @@
 function getData(target) {
+    console.log("localhost request "+target)
     return new Promise( ( resolve, reject ) => {
         var xhttp = new XMLHttpRequest();
         xhttp.onreadystatechange = function() {

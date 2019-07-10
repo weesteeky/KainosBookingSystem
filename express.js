@@ -37,7 +37,7 @@ function runQuery(startingQuery,values){
 //adding course per User story 4
 function addCourse(body){
 	//Create new Query and format it to string
-  var query = 'INSERT INTO Course(Title, Date, Location, Description, Owner, TargetAudience,MaxAttendees) ';
+  	var query = 'INSERT INTO Course(Title, Date, Location, Description, Owner, TargetAudience,MaxAttendees) ';
 	var array = [body.Title,body.Date,body.Location,body.Description,"Kainos",body.Information,body.Capacity]
 	runQuery(query,array)
 	return true;
@@ -58,6 +58,10 @@ app.get('/courses', cors(), function(request, response){
 
 app.get('/addcoursepage', function(req, res){
     res.sendFile('addCourse.html', { root: __dirname} );
+});
+
+app.get('/', function(req, res){
+    res.sendFile('seeCourses.html', { root: __dirname} );
 });
 	
 app.listen(PORT,() => {
