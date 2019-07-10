@@ -1,4 +1,5 @@
 const Database = require('./db.js')
+const cors = require('cors')
 const express = require('express');
 	
 const app = express();
@@ -42,7 +43,7 @@ app.use(express.urlencoded());
 app.use(express.json());
 	
 //Access the parse results as request.body
-app.post('/addcourse', function(request, response){
+app.post('/addcourse', cors(), function(request, response){
 	console.log(request.body);
 	var ans = addCourse(request.body);
 
@@ -52,6 +53,12 @@ app.post('/addcourse', function(request, response){
 	else{
 		response.send("Failed to add new Course");
 	}
+});
+
+app.get('/courses', cors(), function(request, response){
+    db.query("SELECT * FROM Course").then(rows => {
+        response.send(rows)
+    })
 });
 	
 app.listen(PORT,() => {
