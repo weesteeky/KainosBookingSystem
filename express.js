@@ -42,12 +42,26 @@ function addCourse(body){
 	runQuery(query,array)
 	return true;
 }
+
+function bookCourse(body){
+	//Create new Query and format it to string
+  	var query = 'INSERT INTO Employee_Course(CourseID, Name, Email) ';
+	var array = [body.CourseID, body.Name, body.Email]
+	runQuery(query,array)
+	return true;
+}
 	
 //Access the parse results as request.body
 app.post('/addcourse', cors(), function(request, response){
 	console.log(request.body);
 	var ans = addCourse(request.body);
 	response.send("<html><script>alert('Successfully added course')</script><meta http-equiv=\"refresh\" content=\"1; url=http://127.0.0.1:8000/\"></html>");
+});
+
+app.post('/bookcourse', cors(), function(request, response){
+	console.log(request.body);
+	var ans = bookCourse(request.body);
+	response.send("<html><script>alert('Successfully booked course')</script><meta http-equiv=\"refresh\" content=\"1; url=http://127.0.0.1:8000/\"></html>");
 });
 
 app.get('/courses', cors(), function(request, response){
