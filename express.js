@@ -4,7 +4,6 @@ const express = require('express');
 
 const app = express();
 const PORT = 8000
-
 var db = new Database();
 
 // Parse URL-encoded bodies (as sent by HTML forms)
