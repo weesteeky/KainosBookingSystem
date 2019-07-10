@@ -43,15 +43,15 @@
     <div class="form-group">
       <div class="col-7">
         <label for="exampleFormControlInput1">Title:</label>
-        <input type="name" name="Title" size="50" maxlength="100" required class="form-control"
-          id="exampleFormControlInput1" placeholder="Title">
+        <input type="name" name="Title" size="50" maxlength="100" class="form-control"
+          id="exampleFormControlInput1" placeholder="Title" required>
       </div>
     </div>
 
       <div class="col-7">
         <label for="exampleFormControlInput1">Date:</label>
-        <input type="date" name="Date" size="11" maxlength="11" required class="form-control"
-          id="exampleFormControlInput1" placeholder="Title" required>
+        <input type="date" name="Date" size="11" maxlength="11" min="2019-07-10" class="form-control"
+          id="exampleFormControlInput1" placeholder="Title"  required>
       
     </div>
 
@@ -66,7 +66,7 @@
           <option value="Gdansk">Gdansk</option>
           <option value="Amsterdam">Amsterdam</option>
           <option value="Boston">Boston</option>
-          <option value="Amsterdam">Amsterdam</option>
+          <option value="Frankfurt">Frankfurt</option>
         </select>
       </div>
     </div>
@@ -86,8 +86,8 @@
       <div class="col-7">
         <label for="exampleFormControlTextarea1">Capacity:</label>
         <input type="number" name="Capacity" size="50" maxlength="100" min="1" value="1"
-          onkeypress="return event.charCode>=48" required class="form-control" id="exampleFormControlInput1"
-          placeholder="Title">
+          onkeypress="return event.charCode>=48" class="form-control" id="exampleFormControlInput1"
+          placeholder="Title" required>
     </div>
 
       <div class="col-7">
