@@ -32,7 +32,7 @@
                 const width = 3;
                 for(var i = 0; i < data.length; i++){
                     var date = new Date(data[i].Date); 
-                    var courseDate = date.getMonth() + 1 + '/' + date.getDate() + '/' + date.getFullYear();
+                    var courseDate =  date.getDay()+"/"+date.getMonth()+"/"+date.getFullYear();
                     document.getElementById("courses").innerHTML += '<div class="card-deck mb-3 text-center"><div class="card mb-4 box-shadow"><div class="card-header"><h4 class="my-0 font-weight-normal">' +
                                                                         data[i].Title+'</h4></div><div class="card-body"><p>'+data[i].Description+'</p><p>'+courseDate+'</p><p>'+data[i].Location+'</p>'+
                                                                         '</div></div></div></div>'                                                

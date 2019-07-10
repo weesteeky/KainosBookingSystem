@@ -20,7 +20,7 @@ app.use(express.json());
 function getValues(array){
 	var values = "VALUES(";
 	for(var i = 0; i < array.length; i++){
-		values += "'"+escape(array[i])+"',"
+		values += "'"+array[i]+"',"
 	}
 	values = values.substring(0, values.length-1)+");"
 	return values
