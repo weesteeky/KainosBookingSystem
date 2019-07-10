@@ -58,6 +58,12 @@ app.post('/addcourse', cors(), function(request, response){
 	}
 });
 
+//Access the parse results as request.body
+app.post('/bookcourse', cors(), function(request, response){
+	console.log(request.body);
+	
+});
+
 app.get('/courses', cors(), function(request, response){
     db.query("SELECT * FROM Course").then(rows => {
         response.send(rows)
