@@ -27,8 +27,11 @@ function addCourse(body){
 	query += values + ");"
 	console.log("Running query: \n" + query);
 	
-	//validation
+	//validation for date
+	var today = new Date();
 	
+	console.log(body.Date[1])
+
 	db.query(query).then(rows => {
 		console.log("RECORD ADDED")
 	})
