@@ -1,9 +1,12 @@
 const Database = require('./db.js')
 const cors = require('cors')
 const express = require('express');
-	
+var path = require('path')
+
 const app = express();
 const PORT = 8000
+
+app.use(express.static(path.join(__dirname, 'public')));
 	
 var db = new Database();
 
@@ -48,7 +51,7 @@ app.post('/addcourse', cors(), function(request, response){
 	var ans = addCourse(request.body);
 
 	if(ans){
-		response.send("New Course successfully added!");
+		response.send("<html><meta http-equiv=\"refresh\" content=\"1; url=http://127.0.0.1:8000/addcoursepage\"></html>");
 	}
 	else{
 		response.send("Failed to add new Course");
@@ -59,6 +62,12 @@ app.get('/courses', cors(), function(request, response){
     db.query("SELECT * FROM Course").then(rows => {
         response.send(rows)
     })
+});
+
+console.log(__dirname)
+
+app.get('/addcoursepage', function(req, res){
+    res.sendFile('addCourse.html', { root: __dirname} );
 });
 	
 app.listen(PORT,() => {
