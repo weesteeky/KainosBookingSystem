@@ -1,4 +1,5 @@
 const Database = require('./db.js')
+const cors = require('cors')
 const express = require('express');
 	
 const app = express();
@@ -19,14 +20,19 @@ function getValues(array){
 //adding course per User story 4
 function addCourse(body){
 	//Create new Query and format it to string
+
+	//remove OWNER FIELD 
     var query = 'INSERT INTO Course(Title, Date, Location, Description, Owner, TargetAudience,MaxAttendees) VALUES(';
 	var array = [body.Title,body.Date,body.Location,body.Description,"Kainos",body.Information,body.Capacity]
 	var values = getValues(array)
 	query += values + ");"
 	console.log("Running query: \n" + query);
 	
-	//validation
+	//validation for date
+	var today = new Date();
 	
+	console.log(body.Date[1])
+
 	db.query(query).then(rows => {
 		console.log("RECORD ADDED")
 	})
@@ -41,7 +47,7 @@ app.use(express.urlencoded());
 app.use(express.json());
 	
 //Access the parse results as request.body
-app.post('/addcourse', function(request, response){
+app.post('/addcourse', cors(), function(request, response){
 	console.log(request.body);
 	var ans = addCourse(request.body);
 
@@ -51,6 +57,12 @@ app.post('/addcourse', function(request, response){
 	else{
 		response.send("Failed to add new Course");
 	}
+});
+
+app.get('/courses', cors(), function(request, response){
+    db.query("SELECT * FROM Course").then(rows => {
+        response.send(rows)
+    })
 });
 	
 app.listen(PORT,() => {
