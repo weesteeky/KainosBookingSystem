@@ -12,30 +12,35 @@ var db = new Database();
 
 //convert body values into single string
 function getValues(array){
-	var values = "";
+	var values = "VALUES(";
 	for(var i = 0; i < array.length; i++){
-		values += "'"+array[i]+"',"
+		values += "'"+escape(array[i])+"',"
 	}
-	values = values.substring(0, values.length-1)
+	values = values.substring(0, values.length-1)+");"
 	return values
+}
+
+function runQuery(startingQuery,values){
+	startingQuery += getValues(values)
+	console.log("Running query: \n" + startingQuery);
+	db.query(startingQuery).then(rows => {
+		console.log(rows)
+	})
 }
 
 //adding course per User story 4
 function addCourse(body){
 	//Create new Query and format it to string
-
-	//remove OWNER FIELD 
-    var query = 'INSERT INTO Course(Title, Date, Location, Description, Owner, TargetAudience,MaxAttendees) VALUES(';
+    var query = 'INSERT INTO Course(Title, Date, Location, Description, Owner, TargetAudience,MaxAttendees) ';
 	var array = [body.Title,body.Date,body.Location,body.Description,"Kainos",body.Information,body.Capacity]
-	var values = getValues(array)
-	query += values + ");"
-	console.log("Running query: \n" + query);
+	runQuery(query,array)
+	return true;
+}
 
-
-	db.query(query).then(rows => {
-		console.log("RECORD ADDED")
-	})
-
+function addBooking(body){
+	var query = 'INSERT INTO Employee_Course(CourseID,Name,Email) ';
+	var array = [body.CourseID,body.Name,body.Email]
+	runQuery(query,array)
 	return true;
 }
 
@@ -61,7 +66,7 @@ app.post('/addcourse', cors(), function(request, response){
 //Access the parse results as request.body
 app.post('/bookcourse', cors(), function(request, response){
 	console.log(request.body);
-	
+	var ans = addBooking(request.body);
 });
 
 app.get('/courses', cors(), function(request, response){
