@@ -1,10 +1,7 @@
-<html>
-<form>
-<html lang="en"></form>
 
-
-<form>
-  <html lang="en">
+<html lang="en">
+<form action="localhost:8000/addCourse" method="POST">
+ 
 </form>
 <!DOCTYPE html>
 <head>
@@ -42,16 +39,16 @@
 
     <div class="form-group">
       <div class="col-7">
-        <label for="exampleFormControlInput1">Title:</label>
-        <input type="name" name="Title" size="50" maxlength="100" class="form-control"
-          id="exampleFormControlInput1" placeholder="Title" required>
+        <label for="titleID">Title:</label>
+        <input type="name" name="Title" size="50" maxlength="100" required class="form-control"
+          id="titleID" placeholder="Title">
       </div>
     </div>
 
       <div class="col-7">
-        <label for="exampleFormControlInput1">Date:</label>
-        <input type="date" name="Date" size="11" maxlength="11" min="2019-07-10" class="form-control"
-          id="exampleFormControlInput1" placeholder="Title"  required>
+        <label for="dateID">Date:</label>
+        <input type="date" name="Date" size="11" maxlength="11" min="2019-07-10" required class="form-control"
+          id="dateID" placeholder="Title" required>
       
     </div>
 
@@ -72,22 +69,22 @@
     </div>
 
       <div class="col-7">
-        <label for="exampleFormControlTextarea1">Description:</label>
-        <textarea class="form-control" type="text" name="Description" maxlength="300" id="exampleFormControlTextarea1"
+        <label for="descriptionID">Description:</label>
+        <textarea class="form-control" type="text" name="Description" maxlength="300" id="descriptionID"
           rows="3" size="50" maxlength="300" required></textarea>
     </div>
 
       <div class="col-7">
-        <label for="exampleFormControlTextarea1">Information:</label>
-        <textarea class="form-control" type="text" name="Information" maxlength="300" id="exampleFormControlTextarea1"
+        <label for="informationID">Information:</label>
+        <textarea class="form-control" type="text" name="Description" maxlength="300" id="informationID"
           rows="3" size="50" maxlength="200" required></textarea>
     </div>
 
       <div class="col-7">
-        <label for="exampleFormControlTextarea1">Capacity:</label>
+        <label for="capacityID">Capacity:</label>
         <input type="number" name="Capacity" size="50" maxlength="100" min="1" value="1"
-          onkeypress="return event.charCode>=48" class="form-control" id="exampleFormControlInput1"
-          placeholder="Title" required>
+          onkeypress="return event.charCode>=48" required class="form-control" id="capacityID"
+          placeholder="Title">
     </div>
 
       <div class="col-7">
