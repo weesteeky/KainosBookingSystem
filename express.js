@@ -19,6 +19,8 @@ function getValues(array){
 //adding course per User story 4
 function addCourse(body){
 	//Create new Query and format it to string
+
+	//remove OWNER FIELD 
     var query = 'INSERT INTO Course(Title, Date, Location, Description, Owner, TargetAudience,MaxAttendees) VALUES(';
 	var array = [body.Title,body.Date,body.Location,body.Description,"Kainos",body.Information,body.Capacity]
 	var values = getValues(array)
